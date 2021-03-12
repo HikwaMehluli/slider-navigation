@@ -1,0 +1,152 @@
+ul.nav-slider {
+	margin: 350px 0 0 0;
+	list-style: none;
+	z-index: 40;
+}
+
+ul.nav-slider li,
+.nav-slider ul li {
+	list-style: none;
+	text-align: center;
+	margin: 0 0 10px 0;
+	break-inside: avoid !important;
+}
+
+ul.nav-slider li::before,
+.nav-slider ul li::before {
+	content: none;
+}
+
+.nav-slider,
+.nav-slider ul {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 0;
+
+	-moz-column-count: 2;
+	// -moz-column-gap: 20px;
+	-webkit-column-count: 2;
+	// -webkit-column-gap: 20px;
+	column-count: 2;
+	// column-gap: 20px;
+
+	a {
+		border: 1px solid white;
+		border-radius: 5px;
+		background: var(--primary-color) !important;
+		color: var(--white) !important;
+		cursor: pointer;
+		display: block;
+		padding: 10px;
+		text-decoration: none;
+		transition: all 0.5s;
+		width: 200px;
+
+		&:hover {
+			background: var(--grey) !important;
+			color: var(--black) !important;
+		}
+	}
+}
+
+@media only screen and (max-width: 900px) {
+	.nav-slider,
+	.nav-slider ul {
+		a {
+			width: 300px;
+		}
+	}
+}
+
+@media only screen and (max-width: 645px) {
+	#fullScreenSlider .content {
+		padding-top: 100px;
+	}
+
+	ul.nav-slider {
+		margin: 250px 0 0 0;
+	}
+
+	.nav-slider,
+	.nav-slider ul {
+		-moz-column-count: 2;
+		-webkit-column-count: 2;
+		column-count: 2;
+
+		a {
+			width: 160px;
+		}
+	}
+}
+
+// Secondary navigations hidden by default
+.nav-slider.sub-menu,
+.nav-slider ul.sub-menu {
+	transform: translateX(100%);
+	opacity: 0;
+	display: none;
+}
+
+// Push the navigation items to the left - and lower down opacity - when secondary nav slides in
+.nav-slider.moves-out > li > a,
+.nav-slider ul.moves-out > li > a {
+	transform: translateX(-100%);
+	opacity: 0;
+	display: none;
+}
+
+
+// Arrows for Navigation
+.has-children-slider > a,
+.go-back-slider a {
+	position: relative;
+}
+
+.has-children-slider > a::before,
+.has-children-slider > a::after,
+.go-back-slider a::before,
+.go-back-slider a::after {
+	content: "";
+	position: absolute;
+	top: 50%;
+	margin-top: -1px;
+	display: inline-block;
+	height: 2px;
+	width: 10px;
+	background: var(--white);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.has-children-slider > a::before,
+.go-back-slider a::before {
+	transform: rotate(45deg);
+}
+
+.has-children-slider > a::after,
+.go-back-slider a::after {
+	transform: rotate(-45deg);
+}
+
+// arrow goes on the right side - children navigation
+// .has-children-slider > a {
+// 	padding-right: 40px;
+// }
+
+.has-children-slider > a::before,
+.has-children-slider > a::after {
+	right: 20px;
+	transform-origin: 9px 50%;
+}
+
+// arrow goes on the left side - go back button
+.nav-slider .go-back-slider a {
+	// padding-left: 40px;
+
+	&::before,
+	&::after {
+		left: 20px;
+		transform-origin: 1px 50%;
+	}
+}

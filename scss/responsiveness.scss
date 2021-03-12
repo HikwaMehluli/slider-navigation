@@ -1,0 +1,36 @@
+// RESPONSIVENESS
+.content {
+	position: relative;
+	width: 95%;
+	max-width: 1200px;
+	margin: 0 auto;
+	box-sizing: border-box;
+	clear: both;
+
+	&:after {
+		content: " ";
+		display: table;
+		clear: both;
+	}
+
+	.column {
+		width: 100%;
+		float: left;
+		margin-top: 30px;
+		box-sizing: border-box;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.column {
+		margin-left: 3%;
+
+		&:first-child {
+			margin-left: 0;
+		}
+
+		&.half {
+			width: 48.5%;
+		}
+	}
+}
