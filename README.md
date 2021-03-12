@@ -1,6 +1,6 @@
 # Slider Navigation Menu
 
-Slider Navigation Menu is a custom menu which utilises Owl Carousel's interactive Next and Previous function.
+Slider Navigation Menu is a custom menu which utilizes Owl Carousel's interactive Next and Previous function.
 Hope it can inspire you!
 
 ## Add Dependencies
